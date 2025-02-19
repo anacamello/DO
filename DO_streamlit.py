@@ -153,11 +153,9 @@ def identifica_nomes(nomear_designar, subtexto_paragrafo):
                             
                         else:
                             
-                            if ("como gestores da" in subtexto_paragrafo):
+                            if ("a seguir relacionados:" in subtexto_paragrafo):
                                 
-                                
-                                nome = subtexto_paragrafo.split(":")[4]
-                            
+                                nome = subtexto_paragrafo.split("a seguir relacionados:")[1].split("FUNÇÃO ")[1]
 
                             else:
 
