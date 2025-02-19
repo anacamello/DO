@@ -1283,7 +1283,8 @@ arquivo_selecionado = st.sidebar.button("Enviar")
 
 if(arquivo_selecionado):
     
-    nome_arquivo = Path("./Arquivos/" + arquivo.split('/', 6)[6] + ".pdf")
+    #nome_arquivo = Path("./Arquivos/" + arquivo.split('/', 6)[6] + ".pdf")
+    nome_arquivo = Path(arquivo.split('/', 6)[6] + ".pdf")
     
     if not nome_arquivo.exists():
         
