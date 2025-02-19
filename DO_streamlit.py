@@ -337,6 +337,19 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
                                                                                         if("Diretora" in subtexto_paragrafo):
 
                                                                                             funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]
+                                                                                            
+                                                                                        else:
+                                                                                            
+                                                                                            if("Supervisor" in subtexto_paragrafo):
+
+                                                                                                funcao = "Supervisor" + subtexto_paragrafo.partition("Supervisor")[2].split(",")[0]
+                                                                                                
+                                                                                            else:
+                                                                                                
+                                                                                                if("Supervisora" in subtexto_paragrafo):
+
+                                                                                                    funcao = "Supervisora" + subtexto_paragrafo.partition("Supervisora")[2].split(",")[0]
+                                                                                                
 
     funcao = funcao.replace("e r", "er")
 
@@ -697,7 +710,7 @@ def nomeacoes_filtrado(nomeacoes):
 
     for i in nomeacoes.index:
 
-        if("10" in nomeacoes.at[i, "Símbolo"] or "Subsecretário" in nomeacoes.at[i, "Função"] or ("Diretor" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Diretora" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or "Secretário" in nomeacoes.at[i, "Função"] or "Prefeito" in nomeacoes.at[i, "Função"] or "Subsecretária" in nomeacoes.at[i, "Função"] or "Secretária" in nomeacoes.at[i, "Função"] or "Prefeita" in nomeacoes.at[i, "Função"]):
+        if("10" in nomeacoes.at[i, "Símbolo"] or ("Subsecretário" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Diretor" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Diretora" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Secretário" in nomeacoes.at[i, "Função"] and and nomeacoes.at[i, "Símbolo"] == "") or "Prefeito" in nomeacoes.at[i, "Função"] or "Subsecretária" in nomeacoes.at[i, "Função"] or "Secretária" in nomeacoes.at[i, "Função"] or "Prefeita" in nomeacoes.at[i, "Função"]):
 
             nomeacoes_filtrado.at[linha, "Nome"] = nomeacoes.at[i, "Nome"]
             nomeacoes_filtrado.at[linha, "Matrícula"] = nomeacoes.at[i, "Matrícula"]
