@@ -710,7 +710,7 @@ def nomeacoes_filtrado(nomeacoes):
 
     for i in nomeacoes.index:
 
-        if("10" in nomeacoes.at[i, "Símbolo"] or ("Subsecretário" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Diretor" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Diretora" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Secretário" in nomeacoes.at[i, "Função"] and and nomeacoes.at[i, "Símbolo"] == "") or "Prefeito" in nomeacoes.at[i, "Função"] or "Subsecretária" in nomeacoes.at[i, "Função"] or "Secretária" in nomeacoes.at[i, "Função"] or "Prefeita" in nomeacoes.at[i, "Função"]):
+        if("10" in nomeacoes.at[i, "Símbolo"] or ("Subsecretário" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Diretor" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Diretora" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or ("Secretário" in nomeacoes.at[i, "Função"] and nomeacoes.at[i, "Símbolo"] == "") or "Prefeito" in nomeacoes.at[i, "Função"] or "Subsecretária" in nomeacoes.at[i, "Função"] or "Secretária" in nomeacoes.at[i, "Função"] or "Prefeita" in nomeacoes.at[i, "Função"]):
 
             nomeacoes_filtrado.at[linha, "Nome"] = nomeacoes.at[i, "Nome"]
             nomeacoes_filtrado.at[linha, "Matrícula"] = nomeacoes.at[i, "Matrícula"]
