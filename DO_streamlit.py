@@ -153,19 +153,19 @@ def identifica_nomes(nomear_designar, subtexto_paragrafo):
                             
                         else:
                             
-                            if ("a seguir relacionados:" in subtexto_paragrafo):
+                            #if ("a seguir relacionados:" in subtexto_paragrafo):
                                 
-                                nome = subtexto_paragrafo.split("a seguir relacionados:")[1].split("FUNÇÃO ")[1]
+                                #nome = subtexto_paragrafo.split("a seguir relacionados:")[1].split("FUNÇÃO ")[1]
+
+                            #else:
+
+                            if(not subtexto_paragrafo.partition(",")[0]):
+
+                                nome = subtexto_paragrafo.partition("Matrícula")[0]
 
                             else:
 
-                                if(not subtexto_paragrafo.partition(",")[0]):
-
-                                    nome = subtexto_paragrafo.partition("Matrícula")[0]
-
-                                else:
-
-                                    nome = subtexto_paragrafo.partition(",")[0]
+                                nome = subtexto_paragrafo.partition(",")[0]
                            
     return nome
 
