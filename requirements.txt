@@ -1,3 +1,4 @@
 wget
 PyPDF2
 tabula
+spacy
