@@ -18,6 +18,16 @@ from pathlib import Path
 # In[ ]:
 
 
+def identifica_data_do(texto_formatado):
+    
+    data = texto_formatado.split("Rio de Janeiro")[2].split("2025")[0]+"2025"
+    
+    return data
+
+
+# In[ ]:
+
+
 def formata_texto(texto_formatado):
     
     texto_formatado = texto_formatado.replace("\n", " ")
@@ -140,16 +150,24 @@ def identifica_nomes(nomear_designar, subtexto_paragrafo):
                         if("Nome:" in subtexto_paragrafo):
 
                             nome = subtexto_paragrafo.split("Nome:")[2]
-
+                            
                         else:
-
-                            if(not subtexto_paragrafo.partition(",")[0]):
-
-                                nome = subtexto_paragrafo.partition("Matrícula")[0]
+                            
+                            if ("como gestores da" in subtexto_paragrafo):
+                                
+                                
+                                nome = subtexto_paragrafo.split(":")[4]
+                            
 
                             else:
 
-                                nome = subtexto_paragrafo.partition(",")[0]
+                                if(not subtexto_paragrafo.partition(",")[0]):
+
+                                    nome = subtexto_paragrafo.partition("Matrícula")[0]
+
+                                else:
+
+                                    nome = subtexto_paragrafo.partition(",")[0]
                            
     return nome
 
@@ -742,6 +760,7 @@ def transforma_nomeacoes_texto(nomeacoes_filtrado):
             nome = re.sub(r"\b" + "E" + r"\b", "e", nome)
             nome = re.sub(r"\b" + "Da" + r"\b", "da", nome)
             nome = re.sub(r"\b" + "De" + r"\b", "de", nome)
+            nome = re.sub(r"\b" + "Dos" + r"\b", "dos", nome)
             
             nome = nome.replace(" - ", "")
             nome = nome.replace("-", "")
@@ -1325,6 +1344,12 @@ if(arquivo_selecionado):
     nomeacoes = identifica_nomeacoes(texto_formatado)
     nomeacoes_filtrado = nomeacoes_filtrado(nomeacoes)
     texto_nomeacoes = transforma_nomeacoes_texto(nomeacoes_filtrado)
+    
+    data = identifica_data_do(texto_formatado)
+    
+    titulo = "Análise do Diário Oficial do Município do Rio de Janeiro" + data
+    
+    st.subheader(titulo)
     
     st.write_stream(texto_nomeacoes)
 
