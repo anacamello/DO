@@ -327,28 +327,28 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
                                                                                     funcao = "Chefe de Gabinete" + subtexto_paragrafo.partition("Chefe de Gabinete")[2].split(",")[0]
 
                                                                                 else:
+                                                                                    
+                                                                                if("Supervisor" in subtexto_paragrafo):
 
-                                                                                    if("Diretor" in subtexto_paragrafo):
-
-                                                                                        funcao = "Diretor" + subtexto_paragrafo.partition("Diretor")[2].split(",")[0]
+                                                                                        funcao = "Supervisor" + subtexto_paragrafo.partition("Supervisor")[2].split(",")[0]
 
                                                                                     else:
 
-                                                                                        if("Diretora" in subtexto_paragrafo):
+                                                                                        if("Supervisora" in subtexto_paragrafo):
 
-                                                                                            funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]
+                                                                                            funcao = "Supervisora" + subtexto_paragrafo.partition("Supervisora")[2].split(",")[0]
                                                                                             
                                                                                         else:
-                                                                                            
-                                                                                            if("Supervisor" in subtexto_paragrafo):
 
-                                                                                                funcao = "Supervisor" + subtexto_paragrafo.partition("Supervisor")[2].split(",")[0]
-                                                                                                
+                                                                                            if("Diretor" in subtexto_paragrafo):
+
+                                                                                                funcao = "Diretor" + subtexto_paragrafo.partition("Diretor")[2].split(",")[0]
+
                                                                                             else:
-                                                                                                
-                                                                                                if("Supervisora" in subtexto_paragrafo):
 
-                                                                                                    funcao = "Supervisora" + subtexto_paragrafo.partition("Supervisora")[2].split(",")[0]
+                                                                                                if("Diretora" in subtexto_paragrafo):
+
+                                                                                                    funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]            
                                                                                                 
 
     funcao = funcao.replace("e r", "er")
