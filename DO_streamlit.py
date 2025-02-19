@@ -74,6 +74,8 @@ def formata_texto(texto_formatado):
     texto_formatado = texto_formatado.replace("R $", "R$")
     texto_formatado = texto_formatado.replace("INEXIGIBILIDADE", "Inexigibilidade")
     texto_formatado = texto_formatado.replace("inexigibilidade", "Inexigibilidade")
+    texto_formatado = texto_formatado.replace("Q u", "Qu")
+    texto_formatado = texto_formatado.replace("Quintafeira", "Quinta-feira")
     
     return texto_formatado
 
