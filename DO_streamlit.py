@@ -24,31 +24,31 @@ def identifica_data_do(texto_formatado):
 
     if("Segunda-feira" in texto_cortado):
 
-        data = "Segunda-feira" + texto_formatado.split("Segunda-feira")[1].split("2025")[0]+"2025"
+        data = " Segunda-feira" + texto_formatado.split("Segunda-feira")[1].split("2025")[0]+"2025"
 
     else:
 
         if("Terça-feira" in texto_cortado):
 
-            data = "Terça-feira" + texto_formatado.split("Terça-feira")[1].split("2025")[0]+"2025"
+            data = " Terça-feira" + texto_formatado.split("Terça-feira")[1].split("2025")[0]+"2025"
 
         else:
 
             if("Quarta-feira" in texto_cortado):
 
-                data = "Quarta-feira" + texto_formatado.split("Quarta-feira")[1].split("2025")[0]+"2025"
+                data = " Quarta-feira" + texto_formatado.split("Quarta-feira")[1].split("2025")[0]+"2025"
 
             else:
 
                 if("Quinta-feira" in texto_cortado):
 
-                    data = "Quinta-feira" + texto_formatado.split("Quinta-feira")[1].split("2025")[0]+"2025"
+                    data = " Quinta-feira" + texto_formatado.split("Quinta-feira")[1].split("2025")[0]+"2025"
 
                 else:
 
                     if("Sexta-feira" in texto_cortado):
-
-                        data = "Sexta-feira" + texto_formatado.split("Sexta-feira")[1].split("2025")[0]+"2025"
+ 
+                        data = " Sexta-feira" + texto_formatado.split("Sexta-feira")[1].split("2025")[0]+"2025"
 
     return data
 
