@@ -20,8 +20,36 @@ from pathlib import Path
 
 def identifica_data_do(texto_formatado):
     
-    data = texto_formatado.split("Rio de Janeiro")[2].split("2025")[0]+"2025"
-    
+    texto_cortado = texto_formatado[:600]
+
+    if("Segunda-feira" in texto_cortado):
+
+        data = "Segunda-feira" + texto_formatado.split("Segunda-feira")[1].split("2025")[0]+"2025"
+
+    else:
+
+        if("Terça-feira" in texto_cortado):
+
+            data = "Terça-feira" + texto_formatado.split("Terça-feira")[1].split("2025")[0]+"2025"
+
+        else:
+
+            if("Quarta-feira" in texto_cortado):
+
+                data = "Quarta-feira" + texto_formatado.split("Quarta-feira")[1].split("2025")[0]+"2025"
+
+            else:
+
+                if("Quinta-feira" in texto_cortado):
+
+                    data = "Quinta-feira" + texto_formatado.split("Quinta-feira")[1].split("2025")[0]+"2025"
+
+                else:
+
+                    if("Sexta-feira" in texto_cortado):
+
+                        data = "Sexta-feira" + texto_formatado.split("Sexta-feira")[1].split("2025")[0]+"2025"
+
     return data
 
 
@@ -75,7 +103,11 @@ def formata_texto(texto_formatado):
     texto_formatado = texto_formatado.replace("INEXIGIBILIDADE", "Inexigibilidade")
     texto_formatado = texto_formatado.replace("inexigibilidade", "Inexigibilidade")
     texto_formatado = texto_formatado.replace("Q u", "Qu")
+    texto_formatado = texto_formatado.replace("Segundafeira", "Segunda-feira")
+    texto_formatado = texto_formatado.replace("Terçafeira", "Terça-feira")
+    texto_formatado = texto_formatado.replace("Quartafeira", "Quarta-feira")
     texto_formatado = texto_formatado.replace("Quintafeira", "Quinta-feira")
+    texto_formatado = texto_formatado.replace("Sextafeira", "Sexta-feira")
     
     return texto_formatado
 
