@@ -161,7 +161,7 @@ def identifica_nomes(nomear_designar, subtexto_paragrafo):
                             
     else:
         
-        if(nomear_designar == "Designar"):
+        if(nomear_designar == "Designar" and "fiscais do Termo do Contrato" not in subtexto_paragrafo):
         
             if("com validade a partir de" in subtexto_paragrafo[:30]):
 
@@ -186,20 +186,14 @@ def identifica_nomes(nomear_designar, subtexto_paragrafo):
                             nome = subtexto_paragrafo.split("Nome:")[2]
                             
                         else:
-                            
-                            if("os servidores" in subtexto_paragrafo):
-                                
-                                nome = subtexto_paragrafo.split("os servidores")[2]
-                            
+
+                            if(not subtexto_paragrafo.partition(",")[0]):
+
+                                nome = subtexto_paragrafo.partition("Matrícula")[0]
+
                             else:
 
-                                if(not subtexto_paragrafo.partition(",")[0]):
-
-                                    nome = subtexto_paragrafo.partition("Matrícula")[0]
-
-                                else:
-
-                                    nome = subtexto_paragrafo.partition(",")[0]
+                                nome = subtexto_paragrafo.partition(",")[0]
                            
     return nome
 
