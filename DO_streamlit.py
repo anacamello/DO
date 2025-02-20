@@ -298,8 +298,6 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
                                     
                                     funcao = subtexto_paragrafo.partition("a Função de Confiança de")[2].split(",")[0]
                                     
-                                    st.text(funcao)
-                                    
                                 else:
                                             
                                     if("Coordenador" in subtexto_paragrafo):
@@ -1367,7 +1365,7 @@ if(arquivo_selecionado):
 
         texto_formatado = texto_formatado + ''.join(pagina.extract_text())
         
-    formata_texto(texto_formatado)
+    texto_formatado = formata_texto(texto_formatado)
     
     nomeacoes = identifica_nomeacoes(texto_formatado)
     nomeacoes_filtrado = nomeacoes_filtrado(nomeacoes)
