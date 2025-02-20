@@ -1388,7 +1388,8 @@ if(arquivo_selecionado):
     titulo = "Análise do Diário Oficial do Município do Rio de Janeiro"
     
     st.subheader(titulo)
-    st.markdown("*"+data+"*")
+    
+    st.markdown(":blue["+data+"]")
     
     st.write_stream(texto_nomeacoes)
 
