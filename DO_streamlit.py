@@ -252,172 +252,174 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
     
     funcao = ""
     
-    if("Cargo em Comissão de" in subtexto_paragrafo):    
+    if("fiscais do Termo do Contrato" not in subtexto_paragrafo):
+    
+        if("Cargo em Comissão de" in subtexto_paragrafo):    
 
-        funcao = subtexto_paragrafo.partition("Cargo em Comissão de")[2].split(",")[0]
-
-    else:
-
-        if("cargo em comissão de" in subtexto_paragrafo): 
-
-            funcao = subtexto_paragrafo.partition("cargo em comissão de")[2].split(",")[0]
+            funcao = subtexto_paragrafo.partition("Cargo em Comissão de")[2].split(",")[0]
 
         else:
 
-            if("o Cargo de" in subtexto_paragrafo): 
+            if("cargo em comissão de" in subtexto_paragrafo): 
 
-                funcao = subtexto_paragrafo.partition("o Cargo de")[2].split(",")[0]
+                funcao = subtexto_paragrafo.partition("cargo em comissão de")[2].split(",")[0]
 
             else:
 
-                if("Emprego de Confiança de" in subtexto_paragrafo):
+                if("o Cargo de" in subtexto_paragrafo): 
 
-                    funcao = subtexto_paragrafo.partition("Emprego de Confiança de")[2].split(",")[0]
+                    funcao = subtexto_paragrafo.partition("o Cargo de")[2].split(",")[0]
 
                 else:
 
-                    if("Cargo em Comissão" in subtexto_paragrafo):
+                    if("Emprego de Confiança de" in subtexto_paragrafo):
 
-                        funcao = subtexto_paragrafo.partition("Cargo em Comissão")[2].split(",")[0]
+                        funcao = subtexto_paragrafo.partition("Emprego de Confiança de")[2].split(",")[0]
 
                     else:
 
-                        if("cargo em comissão" in subtexto_paragrafo):
+                        if("Cargo em Comissão" in subtexto_paragrafo):
 
-                            funcao = subtexto_paragrafo.partition("cargo em comissão")[2].split(",")[0]
-                            
+                            funcao = subtexto_paragrafo.partition("Cargo em Comissão")[2].split(",")[0]
+
                         else:
-                            
-                            if("Cargo de confiança de" in subtexto_paragrafo): 
 
-                                funcao = subtexto_paragrafo.partition("Cargo de confiança de")[2].split(",")[0]
-                                
+                            if("cargo em comissão" in subtexto_paragrafo):
+
+                                funcao = subtexto_paragrafo.partition("cargo em comissão")[2].split(",")[0]
+
                             else:
-                                
-                                if("a Função de Confiança de" in subtexto_paragrafo):
-                                    
-                                    funcao = subtexto_paragrafo.partition("a Função de Confiança de")[2].split(",")[0]
-                                    
-                                else:
-                                            
-                                    if("Coordenador" in subtexto_paragrafo):
 
-                                        funcao = "Coordenador" + subtexto_paragrafo.partition("Coordenador")[2].split(",")[0]
+                                if("Cargo de confiança de" in subtexto_paragrafo): 
+
+                                    funcao = subtexto_paragrafo.partition("Cargo de confiança de")[2].split(",")[0]
+
+                                else:
+
+                                    if("a Função de Confiança de" in subtexto_paragrafo):
+
+                                        funcao = subtexto_paragrafo.partition("a Função de Confiança de")[2].split(",")[0]
 
                                     else:
 
-                                        if("Gerente" in subtexto_paragrafo):
+                                        if("Coordenador" in subtexto_paragrafo):
 
-                                            funcao = "Gerente" + subtexto_paragrafo.partition("Gerente")[2].split(",")[0]
+                                            funcao = "Coordenador" + subtexto_paragrafo.partition("Coordenador")[2].split(",")[0]
 
                                         else:
 
-                                            if("o Cargo de" in subtexto_paragrafo):
+                                            if("Gerente" in subtexto_paragrafo):
 
-                                                funcao = subtexto_paragrafo.partition("o Cargo de")[2].split(",")[0]
+                                                funcao = "Gerente" + subtexto_paragrafo.partition("Gerente")[2].split(",")[0]
 
                                             else:
 
-                                                if("Assessor" in subtexto_paragrafo):
+                                                if("o Cargo de" in subtexto_paragrafo):
 
-                                                    funcao = "Assessor" + subtexto_paragrafo.partition("Assessor")[2].split(",")[0]
+                                                    funcao = subtexto_paragrafo.partition("o Cargo de")[2].split(",")[0]
 
                                                 else:
 
-                                                    if("Secretário" in subtexto_paragrafo):
+                                                    if("Assessor" in subtexto_paragrafo):
 
-                                                        funcao = "Secretário" + subtexto_paragrafo.partition("Secretário")[2].split(",")[0]
+                                                        funcao = "Assessor" + subtexto_paragrafo.partition("Assessor")[2].split(",")[0]
 
                                                     else:
 
-                                                        if("Subsecretário" in subtexto_paragrafo):
+                                                        if("Secretário" in subtexto_paragrafo):
 
-                                                            funcao = "Subsecretário" + subtexto_paragrafo.partition("Subsecretário")[2].split(",")[0]
+                                                            funcao = "Secretário" + subtexto_paragrafo.partition("Secretário")[2].split(",")[0]
 
                                                         else:
 
-                                                            if("Subsecretária" in subtexto_paragrafo):
+                                                            if("Subsecretário" in subtexto_paragrafo):
 
-                                                                funcao = "Subsecretária" + subtexto_paragrafo.partition("Subsecretária")[2].split(",")[0]
+                                                                funcao = "Subsecretário" + subtexto_paragrafo.partition("Subsecretário")[2].split(",")[0]
 
                                                             else:
 
-                                                                if("Secretária" in subtexto_paragrafo):
+                                                                if("Subsecretária" in subtexto_paragrafo):
 
-                                                                    funcao = "Secretária" + subtexto_paragrafo.partition("Secretária")[2].split(",")[0]
+                                                                    funcao = "Subsecretária" + subtexto_paragrafo.partition("Subsecretária")[2].split(",")[0]
 
                                                                 else:
 
-                                                                    if("Coordenadora" in subtexto_paragrafo):
+                                                                    if("Secretária" in subtexto_paragrafo):
 
-                                                                        funcao = "Coordenadora" + subtexto_paragrafo.partition("Coordenadora")[2].split(",")[0]
+                                                                        funcao = "Secretária" + subtexto_paragrafo.partition("Secretária")[2].split(",")[0]
 
                                                                     else:
 
-                                                                        if("Subcontrolador" in subtexto_paragrafo):
+                                                                        if("Coordenadora" in subtexto_paragrafo):
 
-                                                                            funcao = "Subcontrolador" + subtexto_paragrafo.partition("Subcontrolador")[2].split(",")[0]
-                                                                        
+                                                                            funcao = "Coordenadora" + subtexto_paragrafo.partition("Coordenadora")[2].split(",")[0]
+
                                                                         else:
 
-                                                                            if("Subcontroladora" in subtexto_paragrafo):
+                                                                            if("Subcontrolador" in subtexto_paragrafo):
 
-                                                                                funcao = "Subcontroladora" + subtexto_paragrafo.partition("Subcontroladora")[2].split(",")[0]
+                                                                                funcao = "Subcontrolador" + subtexto_paragrafo.partition("Subcontrolador")[2].split(",")[0]
 
                                                                             else:
 
-                                                                                if("Chefe de Gabinete" in subtexto_paragrafo):
+                                                                                if("Subcontroladora" in subtexto_paragrafo):
 
-                                                                                    funcao = "Chefe de Gabinete" + subtexto_paragrafo.partition("Chefe de Gabinete")[2].split(",")[0]
+                                                                                    funcao = "Subcontroladora" + subtexto_paragrafo.partition("Subcontroladora")[2].split(",")[0]
 
                                                                                 else:
-                                                                                    
-                                                                                    if("Supervisor" in subtexto_paragrafo):
 
-                                                                                            funcao = "Supervisor" + subtexto_paragrafo.partition("Supervisor")[2].split(",")[0]
-                                                                                                
+                                                                                    if("Chefe de Gabinete" in subtexto_paragrafo):
+
+                                                                                        funcao = "Chefe de Gabinete" + subtexto_paragrafo.partition("Chefe de Gabinete")[2].split(",")[0]
+
                                                                                     else:
 
-                                                                                        if("Supervisora" in subtexto_paragrafo):
+                                                                                        if("Supervisor" in subtexto_paragrafo):
 
-                                                                                            funcao = "Supervisora" + subtexto_paragrafo.partition("Supervisora")[2].split(",")[0]
-                                                                                            
+                                                                                                funcao = "Supervisor" + subtexto_paragrafo.partition("Supervisor")[2].split(",")[0]
+
                                                                                         else:
 
-                                                                                            if("Diretor" in subtexto_paragrafo):
+                                                                                            if("Supervisora" in subtexto_paragrafo):
 
-                                                                                                funcao = "Diretor" + subtexto_paragrafo.partition("Diretor")[2].split(",")[0]
+                                                                                                funcao = "Supervisora" + subtexto_paragrafo.partition("Supervisora")[2].split(",")[0]
 
                                                                                             else:
 
-                                                                                                if("Diretora" in subtexto_paragrafo):
+                                                                                                if("Diretor" in subtexto_paragrafo):
 
-                                                                                                    funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]                                                                                           
+                                                                                                    funcao = "Diretor" + subtexto_paragrafo.partition("Diretor")[2].split(",")[0]
+
+                                                                                                else:
+
+                                                                                                    if("Diretora" in subtexto_paragrafo):
+
+                                                                                                        funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]                                                                                           
                                                                                             
 
-    funcao = funcao.replace("e r", "er")
+        funcao = funcao.replace("e r", "er")
 
-    if(" IV" in funcao):
+        if(" IV" in funcao):
 
-        funcao = funcao.partition(" IV")[0] + funcao.partition(" IV")[1]
-
-    else:
-
-        if(" III" in funcao):
-
-            funcao = funcao.partition(" III")[0] + funcao.partition(" III")[1]
+            funcao = funcao.partition(" IV")[0] + funcao.partition(" IV")[1]
 
         else:
 
-            if(" II" in funcao):
+            if(" III" in funcao):
 
-                funcao = funcao.partition(" II")[0] + funcao.partition(" II")[1]
+                funcao = funcao.partition(" III")[0] + funcao.partition(" III")[1]
 
             else:
 
-                if(" I" in funcao):
+                if(" II" in funcao):
 
-                    funcao = funcao.partition(" I")[0] + funcao.partition(" I")[1]
+                    funcao = funcao.partition(" II")[0] + funcao.partition(" II")[1]
+
+                else:
+
+                    if(" I" in funcao):
+
+                        funcao = funcao.partition(" I")[0] + funcao.partition(" I")[1]
                     
     return funcao
 
