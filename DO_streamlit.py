@@ -1385,9 +1385,10 @@ if(arquivo_selecionado):
     
     data = identifica_data_do(texto_formatado)
     
-    titulo = "Análise do Diário Oficial do Município do Rio de Janeiro" + data
+    titulo = "Análise do Diário Oficial do Município do Rio de Janeiro"
     
     st.subheader(titulo)
+    st.markdown("*"+data+"*")
     
     st.write_stream(texto_nomeacoes)
 
