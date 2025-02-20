@@ -598,6 +598,10 @@ def identifica_orgao2(nomear_designar, subtexto_paragrafo, orgao1):
                                     else:
                                         
                                         orgao2 = "Empresa Municipal" + subtexto_paragrafo.partition("Empresa Municipal")[2].split(".")[0]
+                                        
+                                    if("RIOURBE" in orgao2):
+                                        
+                                        orgao2 = orgao2.replace("RIOURBE", " - RIO-URBE")
                                     
                                 else:
                                     
