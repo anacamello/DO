@@ -186,14 +186,20 @@ def identifica_nomes(nomear_designar, subtexto_paragrafo):
                             nome = subtexto_paragrafo.split("Nome:")[2]
                             
                         else:
-
-                            if(not subtexto_paragrafo.partition(",")[0]):
-
-                                nome = subtexto_paragrafo.partition("Matrícula")[0]
-
+                            
+                            if("os servidores" in subtexto_paragrafo):
+                                
+                                nome = subtexto_paragrafo.split("os servidores")[2]
+                            
                             else:
 
-                                nome = subtexto_paragrafo.partition(",")[0]
+                                if(not subtexto_paragrafo.partition(",")[0]):
+
+                                    nome = subtexto_paragrafo.partition("Matrícula")[0]
+
+                                else:
+
+                                    nome = subtexto_paragrafo.partition(",")[0]
                            
     return nome
 
