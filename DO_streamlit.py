@@ -252,48 +252,52 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
     
     funcao = ""
     
-    if("fiscais do Termo do Contrato" not in subtexto_paragrafo):
-    
-        if("Cargo em Comissão de" in subtexto_paragrafo):    
+    if("Cargo em Comissão de" in subtexto_paragrafo):    
 
-            funcao = subtexto_paragrafo.partition("Cargo em Comissão de")[2].split(",")[0]
+        funcao = subtexto_paragrafo.partition("Cargo em Comissão de")[2].split(",")[0]
+
+    else:
+
+        if("cargo em comissão de" in subtexto_paragrafo): 
+
+            funcao = subtexto_paragrafo.partition("cargo em comissão de")[2].split(",")[0]
 
         else:
-
-            if("cargo em comissão de" in subtexto_paragrafo): 
-
-                funcao = subtexto_paragrafo.partition("cargo em comissão de")[2].split(",")[0]
-
+            
+            if("o Cargo de Confiança de" in subtexto_paragrafo):
+                
+                funcao = subtexto_paragrafo.partition("o Cargo de Confiança de")[2].split(",")[0]
+                
             else:
+                
+                if("Cargo de confiança de" in subtexto_paragrafo): 
 
-                if("o Cargo de" in subtexto_paragrafo): 
-
-                    funcao = subtexto_paragrafo.partition("o Cargo de")[2].split(",")[0]
-
+                    funcao = subtexto_paragrafo.partition("Cargo de confiança de")[2].split(",")[0]
+                    
                 else:
+                    
+                    if("o Cargo de" in subtexto_paragrafo): 
 
-                    if("Emprego de Confiança de" in subtexto_paragrafo):
-
-                        funcao = subtexto_paragrafo.partition("Emprego de Confiança de")[2].split(",")[0]
+                        funcao = subtexto_paragrafo.partition("o Cargo de")[2].split(",")[0]
 
                     else:
 
-                        if("Cargo em Comissão" in subtexto_paragrafo):
+                        if("Emprego de Confiança de" in subtexto_paragrafo):
 
-                            funcao = subtexto_paragrafo.partition("Cargo em Comissão")[2].split(",")[0]
+                            funcao = subtexto_paragrafo.partition("Emprego de Confiança de")[2].split(",")[0]
 
                         else:
 
-                            if("cargo em comissão" in subtexto_paragrafo):
+                            if("Cargo em Comissão" in subtexto_paragrafo):
 
-                                funcao = subtexto_paragrafo.partition("cargo em comissão")[2].split(",")[0]
+                                funcao = subtexto_paragrafo.partition("Cargo em Comissão")[2].split(",")[0]
 
                             else:
 
-                                if("Cargo de confiança de" in subtexto_paragrafo): 
+                                if("cargo em comissão" in subtexto_paragrafo):
 
-                                    funcao = subtexto_paragrafo.partition("Cargo de confiança de")[2].split(",")[0]
-
+                                    funcao = subtexto_paragrafo.partition("cargo em comissão")[2].split(",")[0]
+                                
                                 else:
 
                                     if("a Função de Confiança de" in subtexto_paragrafo):
@@ -397,30 +401,30 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
                                                                                                         funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]                                                                                           
                                                                                             
 
-        funcao = funcao.replace("e r", "er")
+    funcao = funcao.replace("e r", "er")
 
-        if(" IV" in funcao):
+    if(" IV" in funcao):
 
-            funcao = funcao.partition(" IV")[0] + funcao.partition(" IV")[1]
+        funcao = funcao.partition(" IV")[0] + funcao.partition(" IV")[1]
+
+    else:
+
+        if(" III" in funcao):
+
+            funcao = funcao.partition(" III")[0] + funcao.partition(" III")[1]
 
         else:
 
-            if(" III" in funcao):
+            if(" II" in funcao):
 
-                funcao = funcao.partition(" III")[0] + funcao.partition(" III")[1]
+                funcao = funcao.partition(" II")[0] + funcao.partition(" II")[1]
 
             else:
 
-                if(" II" in funcao):
+                if(" I" in funcao):
 
-                    funcao = funcao.partition(" II")[0] + funcao.partition(" II")[1]
-
-                else:
-
-                    if(" I" in funcao):
-
-                        funcao = funcao.partition(" I")[0] + funcao.partition(" I")[1]
-                    
+                    funcao = funcao.partition(" I")[0] + funcao.partition(" I")[1]
+    
     return funcao
 
 
