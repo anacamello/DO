@@ -375,13 +375,13 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
                                                                                     if("Supervisor" in subtexto_paragrafo):
 
                                                                                             funcao = "Supervisor" + subtexto_paragrafo.partition("Supervisor")[2].split(",")[0]
-
+                                                                                                
                                                                                     else:
 
                                                                                         if("Supervisora" in subtexto_paragrafo):
 
                                                                                             funcao = "Supervisora" + subtexto_paragrafo.partition("Supervisora")[2].split(",")[0]
-
+                                                                                            
                                                                                         else:
 
                                                                                             if("Diretor" in subtexto_paragrafo):
@@ -392,8 +392,8 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
 
                                                                                                 if("Diretora" in subtexto_paragrafo):
 
-                                                                                                    funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]            
-                                                                                                
+                                                                                                    funcao = "Diretora" + subtexto_paragrafo.partition("Diretora")[2].split(",")[0]                                                                                           
+                                                                                            
 
     funcao = funcao.replace("e r", "er")
 
@@ -418,7 +418,7 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
                 if(" I" in funcao):
 
                     funcao = funcao.partition(" I")[0] + funcao.partition(" I")[1]
-    
+                    
     return funcao
 
 
