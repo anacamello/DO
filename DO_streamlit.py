@@ -556,6 +556,8 @@ def identifica_orgao2(nomear_designar, subtexto_paragrafo, orgao1):
     else:
 
         if("da Fundação" in subtexto_paragrafo):
+            
+            st.text("Fundação")
 
             orgao2 = "Fundação" + subtexto_paragrafo.partition("da Fundação")[2].split(".")[0]
 
