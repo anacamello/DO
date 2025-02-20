@@ -560,6 +560,7 @@ def identifica_orgao2(nomear_designar, subtexto_paragrafo, orgao1):
             st.text("Fundação")
 
             orgao2 = "Fundação" + subtexto_paragrafo.partition("da Fundação")[2].split(".")[0]
+            orgao2 = orgao2.split(",")[0]
             
             st.text(orgao2)
 
