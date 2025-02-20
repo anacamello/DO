@@ -21,6 +21,8 @@ from pathlib import Path
 def identifica_data_do(texto_formatado):
     
     texto_cortado = texto_formatado[:600]
+    
+    st.text(texto_cortado)
 
     if("Segunda-feira" in texto_cortado):
 
