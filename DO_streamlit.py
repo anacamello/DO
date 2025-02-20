@@ -20,7 +20,7 @@ from pathlib import Path
 
 def identifica_data_do(texto_formatado):
     
-    texto_cortado = texto_formatado[:1200]
+    texto_cortado = texto_formatado[:2000]
     
     st.text(texto_cortado)
 
