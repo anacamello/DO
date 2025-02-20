@@ -298,6 +298,8 @@ def identifica_funcao(nomear_designar, subtexto_paragrafo):
                                     
                                     funcao = subtexto_paragrafo.partition("a Função de Confiança de")[2].split(",")[0]
                                     
+                                    st.text(funcao)
+                                    
                                 else:
                                             
                                     if("Coordenador" in subtexto_paragrafo):
